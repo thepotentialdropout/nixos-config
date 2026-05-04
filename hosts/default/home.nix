@@ -18,8 +18,17 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      rebuild-default = "sudo nixos-rebuild switch --flake ~/.dotfiles/#default";
+      rebuild= "sudo nixos-rebuild switch --flake ~/.dotfiles/#default";
     };
+  };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    plugins = with pkgs.vimPlugins; [
+      vim-moonfly-colors
+      nerdtree
+    ];
   };
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
@@ -27,6 +36,10 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    with pkgs; [
+      neofetch
+      htop
+    ];
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
