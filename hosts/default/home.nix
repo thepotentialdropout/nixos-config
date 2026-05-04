@@ -22,13 +22,6 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    plugins = with pkgs.vimPlugins; [
-      nerdtree
-    ];
-  };
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
