@@ -15,6 +15,13 @@
     };
   };
 
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      rebuild-default = "sudo nixos-rebuild switch --flake ~/.dotfiles/#default";
+    };
+  };
+
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
