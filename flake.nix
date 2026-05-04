@@ -24,11 +24,11 @@
         modules = [
           ./hosts/laptop/configuration.nix
           inputs.home-manager.nixosModules.default
-	  ./nixosModules
+	  ./nixos-modules
         ];
       };
     };
 
-    homeManagerModules.default = ./homeManagerModules;
+    homeManagerModules.default = ./home-manager-modules;
   };
 }
