@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [
+  # ./../../homeManagerModules/nvf-configuration.nix
+  ];
+  
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "user";
@@ -30,6 +34,7 @@
   home.packages = with pkgs; [
     neofetch
     htop
+    tree
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
