@@ -24,7 +24,7 @@
         modules = [
           ./hosts/laptop/configuration.nix
           inputs.home-manager.nixosModules.default
-	  # ./nixos-modules
+	  ./nixos-modules
         ];
       };
     };
