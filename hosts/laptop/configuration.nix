@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
       # ./home-manager.nix
     ];
 
@@ -100,13 +99,6 @@
     options = "--delete-older-than 30d";
   };
 
-  home-manager = {
-
-  extraSpecialArgs = { inherit inputs; };
-  users = {
-    "user" = import ./home.nix;
-    };
-  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -125,6 +117,7 @@
     alejandra
     git
     neovim
+    pkgs.home-manager
   ];
 
   nix.settings.experimental-features = [ "nix-command flakes" ];
