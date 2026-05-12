@@ -18,15 +18,12 @@
     };
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      rebuild= "sudo nixos-rebuild switch --flake ~/.dotfiles/#default";
-    };
-  };
 
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
+  
+
+  shell-aliases.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -34,6 +31,7 @@
     neofetch
     htop
     tree
+    nerd-fonts.jetbrains-mono
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

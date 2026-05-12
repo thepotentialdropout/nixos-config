@@ -9,6 +9,13 @@
       style = "dark";
       transparent = true;
       };
+    
+    options = {
+      tabstop = 3;
+      softtabstop = 3;
+      shiftwidth = 3;
+      expandtab = true;
+    };
 
     statusline.lualine.enable = true;
     telescope.enable = true;
