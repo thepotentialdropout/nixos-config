@@ -1,22 +1,25 @@
 { pkgs, lib, ...}:
 {
   programs.nvf = {
+  enable = true;
   settings.vim = {
     theme = {
       enable = true;
-      mame = "moonfly";
+      name = "onedark";
       style = "dark";
+      transparent = true;
       };
 
     statusline.lualine.enable = true;
     telescope.enable = true;
     autocomplete.nvim-cmp.enable = true;
+    lsp.enable = true;
 
     languages = {
-    enableLSP = true;
-    enableTreeSitter = true;
+    enableTreesitter = true;
 
     nix.enable = true;
+    nix.lsp.enable = true;
     ts.enable = true;
     rust.enable = true;
     arduino.enable = true;

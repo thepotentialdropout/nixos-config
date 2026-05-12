@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = { 
-      url = "github:nixos/nixpkgs/nixos-24.11";
+      url = "github:nixos/nixpkgs/nixos-25.05";
     };
 
     nvf = {
@@ -11,24 +11,29 @@
       };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nvf, ... }@inputs: {
-    nixosConfigurations = {
+  outputs = { home-manager, nixpkgs, nvf, ... }@inputs: let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
 
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+    # packages
+
+    homeConfigurations = {
+
+      laptop = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+	
         modules = [
-          ./hosts/laptop/configuration.nix
-          inputs.home-manager.nixosModules.default
-	  ./nixos-modules
+	  ./hosts/laptop/home.nix
+	  ./home-manager-modules
+	  nvf.homeManagerModules.default
         ];
       };
     };
-
-    homeManagerModules.default = ./home-manager-modules;
   };
 }
