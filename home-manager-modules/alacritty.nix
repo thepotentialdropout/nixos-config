@@ -3,6 +3,7 @@
     enable = true;
     settings = {
     window.opacity = 0.95;
+    colors.primary.background = "#1d2021";
     
     font = {
       size = 11.0;

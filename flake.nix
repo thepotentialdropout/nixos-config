@@ -21,19 +21,30 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
 
-    # packages
+    # packages 
+    nixosConfigurations = {
+
+      laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/laptop/configuration.nixpkgs
+          ./nixos-modules
+        ];
+      };
+
+    };
 
     homeConfigurations = {
 
       laptop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	
         modules = [
-	  ./hosts/laptop/home.nix
-	  ./home-manager-modules
-	  nvf.homeManagerModules.default
+          ./hosts/laptop/home.nix
+   	    ./home-manager-modules
+	       nvf.homeManagerModules.default
         ];
       };
+
     };
   };
 }
