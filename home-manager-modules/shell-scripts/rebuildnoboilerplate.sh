@@ -14,6 +14,7 @@ echo "HomeManager Rebuilding..."
 home-manager switch --flake ~/.dotfiles/#laptop &>home-manager-switch.log || (
  cat home-manager-switch.log | grep --color error && false)
 gen=$(home-manager list-generations | grep current)
-git commit -A "$1"
+git add -A
+git commit -m "$1"
 echo "change test"
 popd
