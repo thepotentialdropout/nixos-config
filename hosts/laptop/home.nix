@@ -1,9 +1,12 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
   ];
-  
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "user";
@@ -14,24 +17,21 @@
     userName = "user";
     userEmail = "user@guy.com";
     extraConfig = {
-      init.defaultBranch  = "main";
+      init.defaultBranch = "main";
     };
   };
 
-
-
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  
 
   shell-aliases.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    neofetch
-    htop
-    tree
-    nerd-fonts.jetbrains-mono
+  home.packages = [
+    pkgs.neofetch
+    pkgs.htop
+    pkgs.tree
+    pkgs.nerd-fonts.jetbrains-mono
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -49,6 +49,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    (pkgs.writeShellScriptBin "nob"
+      (builtins.readFile ./../../home-manager-modules/shell-scripts/rebuildnoboilerplate.sh))
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

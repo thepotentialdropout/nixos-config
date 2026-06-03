@@ -1,15 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, lib, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # ./home-manager.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    # ./home-manager.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -86,10 +89,10 @@
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -98,7 +101,6 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -120,7 +122,7 @@
     pkgs.home-manager
   ];
 
-  nix.settings.experimental-features = [ "nix-command flakes" ];
+  nix.settings.experimental-features = ["nix-command flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -149,12 +151,11 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  boot.kernelParams = [ "pcie_aspm=off" ];
-  boot.extraModprobeConfig = '' 
-     options rtw88_core  disable_lps_deep=y
-     options rtw88_pci disable_msi=y disable_aspm=y
+  boot.kernelParams = ["pcie_aspm=off"];
+  boot.extraModprobeConfig = ''
+    options rtw88_core  disable_lps_deep=y
+    options rtw88_pci disable_msi=y disable_aspm=y
   '';
-  
+
   networking.networkmanager.wifi.powersave = false;
-  
 }

@@ -2,13 +2,13 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs = { 
+    nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-25.05";
     };
 
     nvf = {
       url = "github:notashelf/nvf";
-      };
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -16,14 +16,18 @@
     };
   };
 
-  outputs = { home-manager, nixpkgs, nvf, ... }@inputs: let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+  outputs = {
+    home-manager,
+    nixpkgs,
+    nvf,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    # packages
 
-    # packages 
     nixosConfigurations = {
-
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
@@ -31,20 +35,17 @@
           ./nixos-modules
         ];
       };
-
     };
 
     homeConfigurations = {
-
       laptop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./hosts/laptop/home.nix
-   	    ./home-manager-modules
-	       nvf.homeManagerModules.default
+          ./home-manager-modules
+          nvf.homeManagerModules.default
         ];
       };
-
     };
   };
 }

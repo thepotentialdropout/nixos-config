@@ -1,6 +1,9 @@
-{ lib, pkgs, config,  ... }:
-
 {
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
   options.shell-aliases = {
     enable = lib.mkEnableOption "enable shell aliases";
   };
