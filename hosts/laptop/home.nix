@@ -14,7 +14,7 @@
 
   programs.git = {
     enable = true;
-    userName = "user";
+    userName = "thepotentialdropout";
     userEmail = "mmmsplashpaint@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
