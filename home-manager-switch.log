@@ -1,4 +1,0 @@
-warning: Git tree '/home/user/.dotfiles' is dirty
-evaluation warning: The option `vim.languages.ts' defined in `/nix/store/k1cf9npfkc2hlhz1r7p28mc1j4bcl1lz-source/home-manager-modules/nvf-configuration.nix' has been renamed to `vim.languages.typescript'.
-Starting Home Manager activation
-Error: USER is set to "root" but we expect "user"
