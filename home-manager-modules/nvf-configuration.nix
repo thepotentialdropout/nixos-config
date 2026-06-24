@@ -8,7 +8,7 @@
     settings.vim = {
       theme = {
         enable = true;
-        name = "onedark";
+        name = "oxocarbon";
         style = "dark";
         transparent = true;
       };
