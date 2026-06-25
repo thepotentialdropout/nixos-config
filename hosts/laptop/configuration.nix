@@ -11,6 +11,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./../../nixos-modules/rtwfixes.nix
     # ./home-manager.nix
   ];
 
@@ -30,6 +31,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  rtwfixes.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -151,11 +153,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  boot.kernelParams = ["pcie_aspm=off"];
-  boot.extraModprobeConfig = ''
-    options rtw88_core  disable_lps_deep=y
-    options rtw88_pci disable_msi=y disable_aspm=y
-  '';
-
-  networking.networkmanager.wifi.powersave = false;
 }
