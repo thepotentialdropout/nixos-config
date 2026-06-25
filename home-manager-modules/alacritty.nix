@@ -2,8 +2,8 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      window.opacity = 0.95;
-      colors.primary.background = "#000000";
+      window.opacity = 0.97;
+      colors.primary.background = "#000316";
 
       font = {
         size = 11.0;
