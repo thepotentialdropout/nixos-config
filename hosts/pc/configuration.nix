@@ -15,10 +15,18 @@
   ];
 
   programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
+  hardware.graphics.enable = true;
+  services.xserver.videodrivers = ["nvidea"];
+  hardware.nvidia.modesetting.enable = true;
+
+  programs.gamemode.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -31,6 +39,19 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    alacritty
+    zsh
+    git
+    neovim
+    home-manager
+    mangohud
+  ];
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -108,20 +129,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    alacritty
-    zsh
-    sl
-    alejandra
-    git
-    neovim
-    pkgs.home-manager
-  ];
 
   nix.settings.experimental-features = ["nix-command flakes"];
 

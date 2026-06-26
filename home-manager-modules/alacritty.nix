@@ -3,7 +3,10 @@
     enable = true;
     settings = {
       window.opacity = 0.97;
-      colors.primary.background = "#000316";
+      colors = {
+        primary.background = "#000316";
+        primary.foreground = "#E2D9FF";
+      };
 
       font = {
         size = 11.0;

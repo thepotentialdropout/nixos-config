@@ -14,9 +14,9 @@
 
   programs.git = {
     enable = true;
-    userName = "thepotentialdropout";
-    userEmail = "mmmsplashpaint@gmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "thepotentialdropout";
+      user.email = "mmmsplashpaint@gmail.com";
       init.defaultBranch = "main";
     };
   };
@@ -28,11 +28,12 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.neofetch
+    pkgs.owofetch
     pkgs.htop
     pkgs.tree
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.obs-studio
+    pkgs.alacritty
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
