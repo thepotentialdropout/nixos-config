@@ -19,7 +19,6 @@
   outputs = {
     home-manager,
     nixpkgs,
-    nvf,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -43,7 +42,7 @@
         modules = [
           ./hosts/laptop/home.nix
           ./home-manager-modules
-          nvf.homeManagerModules.default
+          inputs.nvf.homeManagerModules.default
         ];
       };
     };
