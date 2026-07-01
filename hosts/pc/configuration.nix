@@ -18,14 +18,19 @@
   programs.steam.gamescopeSession.enable = true;
 
   hardware.graphics.enable = true;
-  services.xserver.videodrivers = ["nvidea"];
+  # services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.modesetting.enable = true;
 
   programs.gamemode.enable = true;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+  # Use provided UUIDs instead of blkid probing (required for btrfs subvolumes)
+  boot.loader.grub.fsIdentifier = "provided";
+
+
   
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -81,7 +86,7 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "gb";
     variant = "";
   };
 
@@ -89,7 +94,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  # services.pulseaudio.enable = false;
+   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
