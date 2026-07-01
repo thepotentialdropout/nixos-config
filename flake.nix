@@ -34,6 +34,13 @@
           ./nixos-modules
         ];
       };
+      pc = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/pc/configuration.nixpkgs
+          ./nixos-modules
+        ];
+      };
     };
 
     homeConfigurations = {
@@ -41,6 +48,14 @@
         inherit pkgs;
         modules = [
           ./hosts/laptop/home.nix
+          ./home-manager-modules
+          inputs.nvf.homeManagerModules.default
+        ];
+      };
+      pc = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./hosts/pc/home.nix
           ./home-manager-modules
           inputs.nvf.homeManagerModules.default
         ];

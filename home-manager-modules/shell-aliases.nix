@@ -14,6 +14,8 @@
       shellAliases = {
         rebuildsystem = ''sudo nixos-rebuild switch -I nixos-config=/home/user/.dotfiles/hosts/laptop/configuration.nix'';
         rebuild = ''home-manager switch --flake ~/.dotfiles/#laptop'';
+        rebuildsystempc = ''sudo nixos-rebuild switch -I nixos-config=/home/user/.dotfiles/hosts/pc/configuration.nix'';
+        rebuildpc = ''home-manager switch --flake ~/.dotfiles/#pc'';
       };
     };
   };
