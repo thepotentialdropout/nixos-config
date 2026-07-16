@@ -12,12 +12,12 @@ require("oil").setup({
   },
   -- Buffer-local options to use for oil buffers
   buf_options = {
-    buflisted = false,
-    bufhidden = "hide",
+    buflisted = true,
+    bufhidden = "show",
   },
   -- Window-local options to use for oil buffers
   win_options = {
-    wrap = false,
+    wrap = true,
     signcolumn = "no",
     cursorcolumn = false,
     foldcolumn = "0",

@@ -10,7 +10,7 @@
         enable = true;
         name = "oxocarbon";
         style = "dark";
-        transparent = true;
+        transparent = false;
       };
 
       options = {
@@ -20,18 +20,26 @@
         expandtab = true;
       };
 
+      diagnostics = {
+        enable = true;
+        config = {
+          virtual_lines = false;
+          virtual_text = true;
+        };
+      };
+
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
       lsp.enable = true;
-      filetree.nvimTree.enable = false;
+      filetree.nvimTree.enable = true;
       statusline.lualine.enable = true;
 
       visuals.nvim-web-devicons.enable = true;
-      utility.oil-nvim = {
-        enable = true;
-        setupOpts = lib.mkLuaInline (builtins.readFile ./oil-nvim.lua);
-      };
-
+      # utility.oil-nvim = {
+      #   enable = true;
+      #   setupOpts = lib.mkLuaInline (builtins.readFile ./oil-nvim.lua);
+      # };
+      #
       languages = {
         enableTreesitter = true;
 
