@@ -22,6 +22,7 @@
   };
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
+  nixpkgs.config.allowUnfree = true;
 
   shell-aliases.enable = true;
 
@@ -34,6 +35,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.obs-studio
     pkgs.alacritty
+    pkgs.file
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
