@@ -124,7 +124,7 @@
     alejandra
     git
     neovim
-    pkgs.home-manager
+    home-manager
   ];
 
   nix.settings.experimental-features = ["nix-command flakes"];
