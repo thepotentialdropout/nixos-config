@@ -12,15 +12,6 @@
   home.username = "user";
   home.homeDirectory = "/home/user";
 
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "thepotentialdropout";
-      user.email = "mmmsplashpaint@gmail.com";
-      init.defaultBranch = "main";
-    };
-  };
-
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
   shell-aliases.enable = true;
