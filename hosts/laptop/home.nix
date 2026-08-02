@@ -8,6 +8,20 @@
   imports = [
   ];
 
+  home.enableNixpkgsReleaseCheck = false;
+  programs = {
+    zellij = {
+      enable = true;
+      settings = {
+        theme = "ao";
+      };
+    };
+    tealdeer = {
+      enable = true;
+      settings.updates.auto_update = true;
+    };
+  };
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "user";

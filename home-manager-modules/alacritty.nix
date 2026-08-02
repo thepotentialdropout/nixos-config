@@ -1,8 +1,9 @@
 {
   programs.alacritty = {
     enable = true;
+    theme = "solarized_dark";
     settings = {
-      window.opacity = 0.97;
+      window.opacity = 0.87;
       colors = {
         primary.background = "#000316";
         primary.foreground = "#E2D9FF";
@@ -11,8 +12,8 @@
       font = {
         size = 11.0;
         normal = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Bold";
+          family = "Jetbrains mono nerd font";
+
         };
       };
     };

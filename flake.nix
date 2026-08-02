@@ -20,6 +20,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
   };
 
   outputs = {
@@ -66,6 +72,7 @@
           ./hosts/laptop/home.nix
           ./home-manager-modules
           inputs.nvf.homeManagerModules.default
+          inputs.plasma-manager.homeModules.plasma-manager
         ];
       };
       pc = home-manager.lib.homeManagerConfiguration {
