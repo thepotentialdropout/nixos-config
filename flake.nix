@@ -68,6 +68,7 @@
     homeConfigurations = {
       laptop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop/home.nix
           ./home-manager-modules

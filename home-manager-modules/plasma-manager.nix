@@ -17,7 +17,7 @@
         size = 32;
       };
       iconTheme = "Papirus-Dark";
-      wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Patak/contents/images/1080x1920.png";
+      wallpaper = "/home/user/Pictures/wallpapers/OIP-1256420818.jpg";
     };
 
     hotkeys.commands."launch-konsole" = {
@@ -181,27 +181,6 @@
           }
           "org.kde.plasma.appmenu"
           "org.kde.plasma.panelspacer"
-          {
-            plasmusicToolbar = {
-              panelIcon = {
-                albumCover = {
-                  useAsIcon = false;
-                  radius = 8;
-                };
-                icon = "view-media-track";
-              };
-              playbackSource = "auto";
-              musicControls.showPlaybackControls = true;
-              songText = {
-                displayInSeparateLines = true;
-                maximumWidth = 640;
-                scrolling = {
-                  behavior = "alwaysScroll";
-                  speed = 3;
-                };
-              };
-            };
-          }
         ];
       }
     ];

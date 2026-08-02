@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./plasma-manager.nix
+    # ./plasma-manager.nix
     ./git.nix
     ./alacritty.nix
     ./nvf-configuration.nix
