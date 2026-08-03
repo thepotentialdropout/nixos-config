@@ -3,9 +3,9 @@
     enable = true;
     theme = "solarized_dark";
     settings = {
-      window.opacity = 0.87;
+      window.opacity = 0.50;
       colors = {
-        primary.background = "#000316";
+        primary.background = "#000000";
         primary.foreground = "#E2D9FF";
       };
 

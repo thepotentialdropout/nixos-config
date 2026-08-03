@@ -13,7 +13,7 @@
     zellij = {
       enable = true;
       settings = {
-        theme = "ao";
+        theme = "solarized_dark";
       };
     };
     tealdeer = {
@@ -35,7 +35,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.owofetch
     pkgs.htop
     pkgs.tree
     pkgs.nerd-fonts.jetbrains-mono
@@ -44,6 +43,10 @@
     pkgs.file
     pkgs.obsidian
     pkgs.gparted
+    pkgs.kdePackages.plasma-browser-integration
+    pkgs.libsForQt5.qtstyleplugin-kvantum
+    pkgs.fastfetch
+    pkgs.lavat
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
