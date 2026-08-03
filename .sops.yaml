@@ -1,0 +1,7 @@
+keys: 
+  - &laptop age14yr5rzw8p5s9vg3p6ps5mzgnh5g8p9lyx6sm7k4hq4lagqdxxdyqse5svu
+creation_rules:
+  - path_regex: secrets/[^/]+(\.(yaml|json|env|ini|conf))?$
+    key_groups:
+     - age:
+       - *laptop

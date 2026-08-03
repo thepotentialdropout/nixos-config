@@ -26,6 +26,15 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixarr = {
+      url = "github:nix-media-server/nixarr";
+    };
+
   };
 
   outputs = {
@@ -57,9 +66,10 @@
         inherit system;
         modules = [
           inputs.disko.nixosModules.disko
+          inputs.nixarr.nixosModules.default
           ./hosts/server/configuration.nix
           ./hosts/server/hardware-configuration.nix
-          #./nixos-modules/server.nix
+          # ./nixos-modules/server.nix
           ./services
         ];
       };
@@ -74,6 +84,7 @@
           ./home-manager-modules
           inputs.nvf.homeManagerModules.default
           inputs.plasma-manager.homeModules.plasma-manager
+          inputs.sops-nix.homeManagerModules.sops
         ];
       };
       pc = home-manager.lib.homeManagerConfiguration {

@@ -47,6 +47,7 @@
     pkgs.libsForQt5.qtstyleplugin-kvantum
     pkgs.fastfetch
     pkgs.lavat
+    pkgs.sops
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -100,7 +101,7 @@
   #  /etc/profiles/per-user/user/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+     EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
