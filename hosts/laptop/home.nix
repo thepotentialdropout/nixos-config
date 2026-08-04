@@ -44,6 +44,8 @@
     pkgs.obsidian
     pkgs.gparted
     pkgs.kdePackages.plasma-browser-integration
+    pkgs.kdePackages.knights
+    pkgs.stockfish
     pkgs.libsForQt5.qtstyleplugin-kvantum
     pkgs.fastfetch
     pkgs.lavat

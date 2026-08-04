@@ -35,8 +35,12 @@
     isNormalUser = true;
     description = "user";
     extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
+
+  nix.nixPath = [
+    "nixpkgs=${pkgs.path}"
+  ];
 
   services = {
     openssh = {

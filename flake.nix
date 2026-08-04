@@ -67,6 +67,7 @@
         modules = [
           inputs.disko.nixosModules.disko
           inputs.nixarr.nixosModules.default
+          inputs.sops-nix.nixosModules.sops
           ./hosts/server/configuration.nix
           ./hosts/server/hardware-configuration.nix
           # ./nixos-modules/server.nix

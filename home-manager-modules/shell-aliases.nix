@@ -17,6 +17,7 @@
         rebuildsystempc = ''sudo nixos-rebuild switch -I nixos-config=/home/user/.dotfiles/hosts/pc/configuration.nix'';
         rebuildpc = ''home-manager switch --flake ~/.dotfiles/#pc'';
         flup = ''sudo nix flake update'';
+        resysserver = ''sudo nixos-rebuild switch --flake /home/user/.dotfiles#server'';
       };
     };
   };
