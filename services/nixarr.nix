@@ -14,6 +14,11 @@ in
       sopsFile = ./../secrets/wg.conf ;
       };
   };
+  
+  services.flaresolverr = {
+    enable = true;
+    openFirewall = true;
+  };
 
   nixarr = {
     enable = true;
@@ -24,6 +29,7 @@ in
     prowlarr.enable = true;
     radarr.enable = true;
     sonarr.enable = true;
+    seerr.enable = true;
 
     transmission = {
       enable = true;
