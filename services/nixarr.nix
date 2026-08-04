@@ -18,7 +18,7 @@ in
   nixarr = {
     enable = true;
     mediaDir = "/mnt/hdd01/media";
-    stateDir = "var/lib/nixarr";
+    stateDir = "/var/lib/nixarr";
 
     jellyfin.enable = true;
     prowlarr.enable = true;
