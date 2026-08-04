@@ -6,8 +6,11 @@
 {
   imports = [
     ./disko-config.nix
+    ./../../home-manager-modules/git.nix
 
   ];
+
+
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -69,10 +72,11 @@
 
   networking = {
     firewall.enable = true;
+    firewall.allowedTCPPorts = [ 80 443 ];
     networkmanager.enable = true;
   };
 
-  programs.zsh.enable = true;
+  programs.vim.enable = true;
   time.timeZone = "Europe/London";
 
   networking.hostName = "server";
