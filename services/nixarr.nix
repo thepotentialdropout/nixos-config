@@ -31,22 +31,25 @@ in
     sonarr.enable = true;
     seerr.enable = true;
 
-    transmission = {
+    qbittorrent = {
       enable = true;
-      # package = pkgs.transmission_4;
-      # todo: figure out how to update this easier
-      peerPort = 51820;
-      # extraSettings = {
-      #   peer-limit-global = 200;
-      #   cache-size-mb = 256;
-      #   incomplete-dir = "/var/lib/transmission/.incomplete";
-      #   incomplete-dir-enabled = true;
-      #   download-queue-enabled = true;
-      #   download-queue-size = 20;
-      #   speed-limit-up = 500;
-      #   speed-limit-up-enabled = true;
-      # };
+      peerPort = 51820; # Set this to the port forwarded by your VPN
+      webuiPort = 5252; # Port for the qui WebUI (default)
+
+      # Disable DHT/PeX for private trackers (optional)
+      # privateTrackers.disableDhtPex = true;
+
+      # Extra qBittorrent configuration (optional)
+      # See: https://github.com/qbittorrent/qBittorrent/wiki/Explanation-of-Options-in-qBittorrent
+      extraConfig = {
+        BitTorrent = {
+          "Session\\MaxActiveDownloads" = 3;
+          "Session\\MaxActiveTorrents" = 5;
+        };
+      };
     };
+
+    exporters.enable = true;
 
     vpn = {
       enable = true;
@@ -121,13 +124,6 @@ in
         };
       };
 
-      "transmission.${vars.domain}" = {
-        forceSSL = true;
-        useACMEHost = vars.domain;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.nixarr.transmission.uiPort}";
-        };
-      };
     };
   };
 
