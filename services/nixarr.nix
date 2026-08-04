@@ -27,19 +27,19 @@ in
 
     transmission = {
       enable = true;
-      package = pkgs.transmission_4;
+      # package = pkgs.transmission_4;
       # todo: figure out how to update this easier
       peerPort = 51820;
-      extraSettings = {
-        peer-limit-global = 200;
-        cache-size-mb = 256;
-        incomplete-dir = "/var/lib/transmission/.incomplete";
-        incomplete-dir-enabled = true;
-        download-queue-enabled = true;
-        download-queue-size = 20;
-        speed-limit-up = 500;
-        speed-limit-up-enabled = true;
-      };
+      # extraSettings = {
+      #   peer-limit-global = 200;
+      #   cache-size-mb = 256;
+      #   incomplete-dir = "/var/lib/transmission/.incomplete";
+      #   incomplete-dir-enabled = true;
+      #   download-queue-enabled = true;
+      #   download-queue-size = 20;
+      #   speed-limit-up = 500;
+      #   speed-limit-up-enabled = true;
+      # };
     };
 
     vpn = {
