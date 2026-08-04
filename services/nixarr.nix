@@ -18,7 +18,7 @@ in
   nixarr = {
     enable = true;
     mediaDir = "/mnt/hdd01/media";
-    stateDir = "/var/lib/nixarr";
+    stateDir = "/mnt/hdd01/media/.state";
 
     jellyfin.enable = true;
     prowlarr.enable = true;
@@ -81,7 +81,7 @@ in
         locations."/" = {
           recommendedProxySettings = true;
           proxyWebsockets = true;
-          proxyPass = "http://192.168.178.186:${toString config.nixarr.jellyfin.port}";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.jellyfin.port}";
           extraConfig = ''
             proxy_buffering off;
           '';
@@ -93,7 +93,7 @@ in
         useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://192.168.178.186:${toString config.nixarr.prowlarr.port}";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.prowlarr.port}";
         };
       };
 
@@ -102,7 +102,7 @@ in
         useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://192.168.178.186:${toString config.nixarr.radarr.port}";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.radarr.port}";
         };
       };
 
@@ -111,7 +111,7 @@ in
         useACMEHost = vars.domain;
         locations."/" = {
           recommendedProxySettings = true;
-          proxyPass = "http://192.168.178.186:${toString config.nixarr.sonarr.port}";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.sonarr.port}";
         };
       };
 
@@ -119,7 +119,7 @@ in
         forceSSL = true;
         useACMEHost = vars.domain;
         locations."/" = {
-          proxyPass = "http://192.168.178.186:${toString config.nixarr.transmission.uiPort}";
+          proxyPass = "http://127.0.0.1:${toString config.nixarr.transmission.uiPort}";
         };
       };
     };
