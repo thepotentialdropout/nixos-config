@@ -6,7 +6,8 @@
 {
   imports = [
     ./disko-config.nix
-    ./../../home-manager-modules/git.nix
+    # ./../../home-manager-modules/git.nix
+    ./../../services/nixarr.nix
 
   ];
 

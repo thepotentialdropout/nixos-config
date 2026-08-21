@@ -44,6 +44,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    vars = import ./vars.nix;
   in {
     # packages
 
@@ -64,6 +65,7 @@
       };
       server = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit vars; };
         modules = [
           inputs.disko.nixosModules.disko
           inputs.nixarr.nixosModules.default
@@ -71,7 +73,6 @@
           ./hosts/server/configuration.nix
           ./hosts/server/hardware-configuration.nix
           # ./nixos-modules/server.nix
-          ./services
         ];
       };
     };
