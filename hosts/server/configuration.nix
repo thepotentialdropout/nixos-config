@@ -73,7 +73,7 @@
 
   networking = {
     firewall.enable = true;
-    firewall.allowedTCPPorts = [ 80 443 8096 7878 5055 9696 8989 8191 ];
+    firewall.allowedTCPPorts = [ 80 443 8096 7878 5055 9696 8989 8191 5252 ];
     networkmanager.enable = true;
   };
 

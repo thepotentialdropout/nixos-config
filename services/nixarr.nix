@@ -31,7 +31,7 @@ in
     sonarr.enable = true;
     seerr.enable = true;
 
-    transmission = {
+    qbittorrent = {
       enable = true;
       # package = pkgs.transmission_4;
       # todo: figure out how to update this easier
@@ -45,13 +45,10 @@ in
         download-queue-size = 20;
         speed-limit-up = 500;
         speed-limit-up-enabled = true;
-        rpc-authentication-required = true;
-        rpc-username = vars.userName;
-        rpc-whitelist-enabled = false;
-        # todo: figure out how to integrate rpc-password into sops-nix
-        rpc-password = "{65532fbf7965b454def5709391fbccb622ee81a9MhWNTDtL";
       };
     };
+
+    exporters.enable = true;
 
     vpn = {
       enable = true;
@@ -126,13 +123,6 @@ in
         };
       };
 
-      "transmission.${vars.domain}" = {
-        forceSSL = true;
-        useACMEHost = vars.domain;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.nixarr.transmission.uiPort}";
-        };
-      };
     };
   };
 
