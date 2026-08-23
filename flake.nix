@@ -52,6 +52,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          inputs.sops-nix.nixosModules.sops
           ./hosts/laptop/configuration.nix
           ./nixos-modules
         ];
@@ -82,11 +83,11 @@
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [
+          inputs.sops-nix.homeManagerModules.sops
           ./hosts/laptop/home.nix
           ./home-manager-modules
           inputs.nvf.homeManagerModules.default
           inputs.plasma-manager.homeModules.plasma-manager
-          inputs.sops-nix.homeManagerModules.sops
         ];
       };
       pc = home-manager.lib.homeManagerConfiguration {

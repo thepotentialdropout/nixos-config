@@ -65,10 +65,10 @@
   services = {
     openssh = {
       enable = true;
-      # settings = {
-      #   PermitRootLogin = "no";
-      #   PasswordAuthentication = false;
-      # };
+      settings = {
+        PermitRootLogin = "no";
+        # PasswordAuthentication = false;
+      };
       openFirewall = true;
     };
     fstrim.enable = true;
