@@ -7,10 +7,13 @@
   imports = [
     ./disko-config.nix
     # ./../../home-manager-modules/git.nix
-    ./../../services/nixarr.nix
+    ./../../services/default.nix
 
   ];
 
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
 
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

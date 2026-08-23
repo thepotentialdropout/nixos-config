@@ -36,7 +36,7 @@ services.samba = {
       #"use sendfile" = "yes";
       #"max protocol" = "smb2";
       # note: localhost is the ipv6 localhost ::1
-      "hosts allow" = "192.168.0. 127.0.0.1 localhost";
+      "hosts allow" = "192.168.178. 127.0.0.1 localhost";
       "hosts deny" = "0.0.0.0/0";
     };
     "public" = {
@@ -77,7 +77,7 @@ services.avahi = {
     # is repeated twice with newline characters as smbpasswd requires a password
     # confirmation even in non-interactive mode where input is piped in through stdin. 
     init_smbpasswd.text = ''
-      /run/current-system/sw/bin/printf "$(/run/current-system/sw/bin/cat ${config.sops.secrets.samba.path})\n$(/run/current-system/sw/bin/cat ${config.sops.secrets.samba.path})\n" | /run/current-system/sw/bin/smbpasswd -sa samba_user
+      /run/current-system/sw/bin/printf "$(/run/current-system/sw/bin/cat ${config.sops.secrets."samba_password".path})\n$(/run/current-system/sw/bin/cat ${config.sops.secrets."samba_password".path})\n" | /run/current-system/sw/bin/smbpasswd -sa samba_user
     '';
   };
 }
