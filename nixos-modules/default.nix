@@ -6,6 +6,7 @@
   imports = [
     # ./home-manager.nix
     ./main-user.nix
-    ./samba_client.nix
+    ./samba-client.nix
+    ./sops.nix
   ];
 }
