@@ -10,6 +10,8 @@
 
     # Optionally resolve local hosts (domain is optional)
     dns.hosts = [ "192.168.1.188 hostname.domain" ];
+ 
+    openfirewallDNS = true;
   };
 
   lists = [    # Lists can be added via URL
@@ -26,4 +28,5 @@ services.pihole-web = {
   enable = true;
   ports = [ "443s" ];
 };
+
 }
