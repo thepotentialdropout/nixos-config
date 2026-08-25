@@ -9,7 +9,7 @@
   };
 
   config = lib.mkIf config.shell-aliases.enable {
-    programs.bash = {
+    programs.zsh = {
       enable = true;
       shellAliases = {
         rebuildsystem = ''sudo nixos-rebuild switch --flake /home/user/.dotfiles/hosts#laptop'';

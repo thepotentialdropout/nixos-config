@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    # ./home-manager.nix
+    ./rtwfixes.nix
     ./main-user.nix
     ./samba-client.nix
     ./sops.nix

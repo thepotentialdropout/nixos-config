@@ -40,7 +40,7 @@ services.samba = {
       "hosts deny" = "0.0.0.0/0";
     };
     "public" = {
-      "path" = "/mnt/hdd01";
+      "path" = "/mnt/hdd01/public";
       "browseable" = "yes";
       "read only" = "no";
       "create mask" = "0644";

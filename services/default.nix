@@ -6,6 +6,7 @@
     ./immich.nix
     ./microbin.nix
     # ./nextcloud.nix
+    ./pihole.nix
   ];
 
 }

@@ -7,7 +7,7 @@
     # ./plasma-manager.nix
     ./git.nix
     ./alacritty.nix
-    ./nvf-configuration.nix
+    ./nvf.nix
     ./shell-aliases.nix
     ./aria2.nix
   ];

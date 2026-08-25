@@ -22,6 +22,7 @@
     };
   };
 
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "user";
@@ -29,12 +30,14 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowInsecure = true;
 
   shell-aliases.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.devenv
     pkgs.htop
     pkgs.tree
     pkgs.nerd-fonts.jetbrains-mono
@@ -50,6 +53,8 @@
     pkgs.fastfetch
     pkgs.lavat
     pkgs.sops
+    pkgs.dig
+    pkgs.net-tools
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
