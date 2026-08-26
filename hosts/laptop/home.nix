@@ -55,6 +55,7 @@
     pkgs.sops
     pkgs.dig
     pkgs.net-tools
+    pkgs.libreoffice
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
