@@ -65,11 +65,10 @@
     ];
   };
 
-  programs.firefox.enable = true;
-  programs.zsh.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     vim 
     wget
