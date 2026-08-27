@@ -1,6 +1,7 @@
 {...}:
 {
   imports = [
+    ./acme.nix
     ./samba.nix 
     # ./nixarr.nix
     ./immich.nix

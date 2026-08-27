@@ -6,7 +6,10 @@
   acmeEmail = "admin+acme@${vars.domain}";
 in {
   sops.secrets = {
-    "cloudflare-api-key" = {};
+    "cloudflare-api-key" = {
+      format = "binary";
+      sopsFile = ./../secrets/cloudflare-api-key.json;
+    };
   };
 
   # inspo: https://carjorvaz.com/posts/setting-up-wildcard-lets-encrypt-certificates-on-nixos/
@@ -33,9 +36,9 @@ in {
     443
   ];
 
-  environment.persistence."/nix/persist" = {
-    directories = [
-      "/var/lib/acme"
-    ];
-  };
+  # environment.persistence."/nix/persist" = {
+  #   directories = [
+  #     "/var/lib/acme"
+  #   ];
+  # };
 }
