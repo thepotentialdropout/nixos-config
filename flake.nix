@@ -31,6 +31,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    homeserver = {
+      url = "github:NixOS/nixpkgs/nixos-26.05-small";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
