@@ -18,7 +18,7 @@ settings = {
       
 MICROBIN_BIND = "0.0.0.0";
       
-MICROBIN_PORT = 8000;
+MICROBIN_PORT = 8010;
       
 MICROBIN_ENCRYPTION_CLIENT_SIDE = true;
       

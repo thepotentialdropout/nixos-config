@@ -25,15 +25,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-mailserver = {
+      url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
-
-    homeserver = {
-      url = "github:NixOS/nixpkgs/nixos-26.05-small";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sops-nix = {
@@ -76,8 +76,9 @@
       };
       server = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit vars; };
+        specialArgs = { inherit vars inputs;	};
         modules = [
+          inputs.nixos-mailserver.nixosModules.default
           inputs.disko.nixosModules.disko
           inputs.nixarr.nixosModules.default
           inputs.sops-nix.nixosModules.sops
