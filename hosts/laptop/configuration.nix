@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -17,16 +14,11 @@
   };
   
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.editor = false;
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  networking.hostName = "nixos"; 
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+   
+  networking.hostName = "laptop"; 
 
   networking.networkmanager.enable = true;
   rtwfixes.enable = true;
@@ -69,24 +61,16 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   environment.systemPackages = with pkgs; [
     vim 
     wget
     alacritty
-    zsh
     git
     home-manager
   ];
 
   nix.settings.experimental-features = ["nix-command flakes"];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   services.openssh.enable = true;
 

@@ -1,9 +1,12 @@
 { pkgs,
   inputs,
+  config,
   ...}:
 {
+
   programs = {
     firefox = {
+      configPath = ".mozilla/firefox";
       enable = true;
       profiles.user = {
         search.engines = {
@@ -21,7 +24,7 @@
         };
         search.force = true;
 
-        userChrome = builtins.readFile ./userchrome.css;
+        # userChrome = builtins.readFile ./userchrome.css;
 
         extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
           bitwarden
@@ -34,4 +37,13 @@
       };
     };
   };
+
+  # home.file.".mozilla/firefox/user/chrome" = {
+  #   source = "${builtins.fetchGit {
+  #     url = "https://github.com/eromatiya/blurredfox";
+  #     rev = "6976b5460f47bd28b4dc53bd093012780e6bfed3";
+  #   }}";
+  #   recursive = true;
+  # };
+
 }

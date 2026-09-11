@@ -53,6 +53,27 @@
         clang.enable = true;
         lua.enable = true;
       };
+
+      keymaps = [
+        {
+          key = "<leader>a";
+          mode = "n";
+          silent = true;
+          action = ":restart<CR>";
+        }
+        {
+          key = "<leader>n";
+          mode = "n";
+          silent = false;
+          action = ":NvimTreeToggle<CR>";
+        }
+        {
+          key = "<leader>m";
+          mode = "n";
+          silent = true;
+          action = ":make<CR>";
+        }
+      ];
     };
   };
 }

@@ -32,11 +32,12 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowInsecure = true;
 
-  shell-aliases.enable = true;
+  zsh-config.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.localsend
     pkgs.devenv
     pkgs.htop
     pkgs.tree

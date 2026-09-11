@@ -8,7 +8,7 @@
     ./git.nix
     ./alacritty.nix
     ./nvf.nix
-    ./shell-aliases.nix
+    ./zsh.nix
     ./aria2.nix
     ./firefox.nix
   ];
