@@ -37,6 +37,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    #todo: clean packages and put any-nix-shell into zsh.nix
+    pkgs.any-nix-shell
+    pkgs.yazi
     pkgs.localsend
     pkgs.devenv
     pkgs.htop
@@ -57,6 +60,7 @@
     pkgs.dig
     pkgs.net-tools
     pkgs.libreoffice
+
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

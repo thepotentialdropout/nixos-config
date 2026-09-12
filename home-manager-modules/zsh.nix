@@ -3,22 +3,34 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   options.zsh-config = {
     enable = lib.mkEnableOption "enable shell aliases";
   };
 
   config = lib.mkIf config.zsh-config.enable {
+    # home.packages = home.packages ++ [
+    #   pkgs.any-nix-shell
+    # ];
     programs.zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      history.sizee= 10000;
+      history.size = 10000;
+
+      initContent = ''
+        any-nix-shell zsh --info-right | source /dev/stdin
+      '';
 
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "dirhistory" "history" ];
+        plugins = [
+          "git"
+          "dirhistory"
+          "history"
+        ];
       };
 
       shellAliases = {
@@ -29,10 +41,15 @@
         flup = "sudo nix flake update";
         resysserver = "sudo nixos-rebuild switch --flake /home/user/.dotfiles#server";
         ll = "ls -la";
-        
+
         ".." = "cd ./..";
         "..." = "cd ./../..";
         "...." = "cd ./../../..";
+
+        # todo: make conditional
+        gs = "git status";
+        ga = "git add -A";
+
       };
     };
   };

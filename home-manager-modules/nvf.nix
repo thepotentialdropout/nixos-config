@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.nvf = {
     enable = true;
     defaultEditor = true;
@@ -29,11 +30,31 @@
         };
       };
 
-      telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
       lsp.enable = true;
       filetree.nvimTree.enable = true;
       statusline.lualine.enable = true;
+      formatter.conform-nvim.enable = true;
+
+      navigation.harpoon = {
+        enable = true;
+        mappings = { };
+      };
+
+      telescope = {
+        enable = true;
+        extensions = [
+          {
+            name = "fzf";
+            packages = [ pkgs.vimPlugins.telescope-fzf-native-nvim ];
+            setup = {
+              fzf = {
+                fuzzy = true;
+              };
+            };
+          }
+        ];
+      };
 
       visuals.nvim-web-devicons.enable = true;
       # utility.oil-nvim = {
@@ -56,22 +77,16 @@
 
       keymaps = [
         {
-          key = "<leader>a";
-          mode = "n";
-          silent = true;
-          action = ":restart<CR>";
-        }
-        {
-          key = "<leader>n";
-          mode = "n";
-          silent = false;
-          action = ":NvimTreeToggle<CR>";
-        }
-        {
           key = "<leader>m";
           mode = "n";
           silent = true;
           action = ":make<CR>";
+        }
+        {
+          key = "<leader>f";
+          mode = "n";
+          silent = true;
+          action = ":lua vim.lsp.buf.format()<CR>";
         }
       ];
     };

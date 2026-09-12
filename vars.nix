@@ -1,3 +1,4 @@
+#inspo: chenglab on github
 {
   # note: replace these values with your own
   fullName = "user surname";
