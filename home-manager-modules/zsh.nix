@@ -49,6 +49,7 @@
         # todo: make conditional
         gs = "git status";
         ga = "git add -A";
+        gp = "git push github main";
 
       };
     };

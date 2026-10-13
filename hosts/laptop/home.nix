@@ -38,6 +38,7 @@
   # environment.
   home.packages = [
     #todo: clean packages and put any-nix-shell into zsh.nix
+    pkgs.openboardview
     pkgs.any-nix-shell
     pkgs.yazi
     pkgs.localsend

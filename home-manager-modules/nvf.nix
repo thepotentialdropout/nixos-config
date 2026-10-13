@@ -73,6 +73,8 @@
         assembly.enable = true;
         clang.enable = true;
         lua.enable = true;
+        html.enable = true;
+        css.enable = true;
       };
 
       keymaps = [

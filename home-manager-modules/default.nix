@@ -11,5 +11,6 @@
     ./zsh.nix
     ./aria2.nix
     ./firefox.nix
+    ./yazi.nix
   ];
 }

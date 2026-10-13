@@ -9,8 +9,9 @@
       };
     };
 
-    # git-worktree-switcher = {
-    #   enable = true;
-    # };
+    git-worktree-switcher = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }
