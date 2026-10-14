@@ -1,6 +1,6 @@
-let 
-  pkgs = import <nixpkgs> {};
-in 
+let
+  pkgs = import <nixpkgs> { };
+in
 derivation {
   name = "simple";
   builder = "${pkgs.bash}/bin/bash";
