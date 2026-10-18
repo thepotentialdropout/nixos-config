@@ -22,6 +22,9 @@
 
   networking.networkmanager.enable = true;
   rtwfixes.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+  };
 
   time.timeZone = "Europe/London";
 
@@ -68,6 +71,7 @@
     alacritty
     git
     home-manager
+    (pkgs.callPackage ./../../nixos-modules/mac-theme.nix {})
   ];
 
   nix.settings.experimental-features = ["nix-command flakes"];
