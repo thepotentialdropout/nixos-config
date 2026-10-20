@@ -7,7 +7,6 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    # ./home-manager.nix
   ];
 
   programs.steam.enable = true;
@@ -64,12 +63,12 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "pc"; # Define your hostname.
+  networking.hostName = "pc"; 
 
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim 
     wget
     alacritty
     zsh
@@ -77,6 +76,7 @@
     neovim
     home-manager
     mangohud
+    (pkgs.callPackage ./../../nixos-modules/mac-theme.nix {})
   ];
 
   time.timeZone = "Europe/London";

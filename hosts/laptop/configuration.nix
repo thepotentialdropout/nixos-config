@@ -33,7 +33,7 @@
   services.xserver.enable = true;
 
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  kde-macos.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -56,7 +56,6 @@
     description = "user";
     extraGroups = ["networkmanager" "wheel" "dialout"];
     packages = with pkgs; [
-      kdePackages.kate
     ];
   };
 
@@ -71,7 +70,6 @@
     alacritty
     git
     home-manager
-    (pkgs.callPackage ./../../nixos-modules/mac-theme.nix {})
   ];
 
   nix.settings.experimental-features = ["nix-command flakes"];

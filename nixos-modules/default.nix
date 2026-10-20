@@ -8,5 +8,6 @@
     ./main-user.nix
     ./samba-client.nix
     ./sops.nix
+    ./kde.nix
   ];
 }

@@ -31,10 +31,16 @@
       };
 
       autocomplete.nvim-cmp.enable = true;
-      lsp.enable = true;
       filetree.nvimTree.enable = true;
       statusline.lualine.enable = true;
       formatter.conform-nvim.enable = true;
+
+      lsp = {
+        enable = true;
+        presets = {
+          emmet-ls.enable = true;
+        };
+      };
 
       navigation.harpoon = {
         enable = true;
@@ -65,6 +71,11 @@
       languages = {
         enableTreesitter = true;
 
+        html = {
+          enable = true;
+          lsp.servers = [ "emmet-ls" ];
+        };
+
         nix.enable = true;
         nix.lsp.enable = true;
         typescript.enable = true;
@@ -73,7 +84,6 @@
         assembly.enable = true;
         clang.enable = true;
         lua.enable = true;
-        html.enable = true;
         css.enable = true;
       };
 
