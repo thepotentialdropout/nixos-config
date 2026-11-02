@@ -3,6 +3,7 @@
   pkgs,
   lib,
   inputs,
+  system,
   ...
 }: {
   imports = [
@@ -63,6 +64,7 @@
     pkgs.libreoffice
     pkgs.mullvad
 
+    inputs.plumj-am.packages.${system}.raddebugger
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

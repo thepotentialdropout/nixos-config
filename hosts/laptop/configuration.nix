@@ -72,7 +72,7 @@
     home-manager
   ];
 
-  nix.settings.experimental-features = ["nix-command flakes"];
+  nix.settings.experimental-features = ["nix-command flakes pipe-operators"];
 
   services.openssh.enable = true;
 

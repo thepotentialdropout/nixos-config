@@ -45,6 +45,12 @@
       url = "github:nix-media-server/nixarr";
     };
 
+    plumj-am = {
+      url = "github:plumj-am/nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
   };
 
   outputs = {
@@ -92,7 +98,7 @@
     homeConfigurations = {
       laptop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs system; };
         modules = [
           inputs.sops-nix.homeManagerModules.sops
           ./hosts/laptop/home.nix
