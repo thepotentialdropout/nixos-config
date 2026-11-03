@@ -22,7 +22,7 @@ in
       knights
     ];
     environment.systemPackages = [
-      (pkgs.callPackage ./mac-theme.nix { })
+      (pkgs.callPackage ./../packages/mac-theme.nix { })
     ];
   };
 }

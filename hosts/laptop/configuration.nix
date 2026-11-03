@@ -27,13 +27,10 @@
   };
 
   time.timeZone = "Europe/London";
-
   i18n.defaultLocale = "en_GB.UTF-8";
-
-  services.xserver.enable = true;
-
-  services.displayManager.sddm.enable = true;
-  kde-macos.enable = true;
+  
+  i3-config.enable = true;
+  kde-macos.enable = false;
 
   services.xserver.xkb = {
     layout = "us";
@@ -50,7 +47,6 @@
     pulse.enable = true;
   };
 
-
   users.users.user = {
     isNormalUser = true;
     description = "user";
@@ -58,9 +54,6 @@
     packages = with pkgs; [
     ];
   };
-
-
-  nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
@@ -72,6 +65,7 @@
     home-manager
   ];
 
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command flakes pipe-operators"];
 
   services.openssh.enable = true;

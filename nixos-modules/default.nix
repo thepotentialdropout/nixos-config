@@ -8,6 +8,7 @@
     ./main-user.nix
     ./samba-client.nix
     ./sops.nix
-    ./kde.nix
+    ./kde-macos.nix
+    ./i3.nix
   ];
 }
