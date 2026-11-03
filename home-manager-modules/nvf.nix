@@ -30,10 +30,27 @@
         };
       };
 
+      visuals = {
+        indent-blankline = {
+          enable = true;
+          setupOpts = {
+            enabled = false;
+          };
+        };
+      };
+      # mini.indentscope.enable = true;
+
       autocomplete.nvim-cmp.enable = true;
       filetree.nvimTree.enable = true;
       statusline.lualine.enable = true;
       formatter.conform-nvim.enable = true;
+
+      extraPlugins =  {
+        smear-cursor = {
+          package = pkgs.vimPlugins.smear-cursor-nvim;
+          setup = "require('smear_cursor').setup {}";
+        };
+      };
 
       lsp = {
         enable = true;
@@ -99,6 +116,18 @@
           mode = "n";
           silent = true;
           action = ":lua vim.lsp.buf.format()<CR>";
+        }
+        {
+          key = "<leader>ibl";
+          mode = "n";
+          silent = true;
+          action = ":lua require('ibl').update({enabled = true})<CR>";
+        }
+        {
+          key = "<leader>iblf";
+          mode = "n";
+          silent = true;
+          action = ":lua require('ibl').update({enabled = false})<CR>";
         }
       ];
     };

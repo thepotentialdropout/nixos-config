@@ -10,9 +10,9 @@
   };
 
   config = lib.mkIf config.zsh-config.enable {
-    # home.packages = home.packages ++ [
-    #   pkgs.any-nix-shell
-    # ];
+    home.packages = [
+      pkgs.any-nix-shell
+    ];
     programs.zsh = {
       enable = true;
       enableCompletion = true;

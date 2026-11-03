@@ -37,32 +37,33 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     #todo: clean packages and put any-nix-shell into zsh.nix
-    pkgs.openboardview
-    pkgs.any-nix-shell
-    pkgs.yazi
-    pkgs.localsend
-    pkgs.devenv
-    pkgs.htop
-    pkgs.tree
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.obs-studio
-    pkgs.alacritty
-    pkgs.file
-    pkgs.obsidian
-    pkgs.gparted
-    pkgs.kdePackages.plasma-browser-integration
-    pkgs.kdePackages.knights
-    pkgs.stockfish
-    pkgs.libsForQt5.qtstyleplugin-kvantum
-    pkgs.fastfetch
-    pkgs.lavat
-    pkgs.sops
-    pkgs.dig
-    pkgs.net-tools
-    pkgs.libreoffice
-    pkgs.mullvad
+    alacritty
+    any-nix-shell
+    devenv
+    dig
+    fastfetch
+    file
+    fzf
+    gparted
+    htop
+    lavat
+    libreoffice
+    libsForQt5.qtstyleplugin-kvantum
+    localsend
+    man-pages
+    mullvad
+    nerd-fonts.jetbrains-mono
+    net-tools
+    obs-studio
+    obsidian
+    kdePackages.okular
+    openboardview
+    sops
+    stockfish
+    tree
+    yazi
 
     inputs.plumj-am.packages.${system}.raddebugger
 

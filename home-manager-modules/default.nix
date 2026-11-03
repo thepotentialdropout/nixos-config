@@ -12,5 +12,6 @@
     ./aria2.nix
     ./firefox.nix
     ./yazi.nix
+    ./tmux.nix
   ];
 }
