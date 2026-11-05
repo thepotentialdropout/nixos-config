@@ -45,6 +45,9 @@ bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_SOURCE@ to
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+# Use clipmenu to open clipboard
+bindsym $mod+p exec --no-startup-id clipmenu
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

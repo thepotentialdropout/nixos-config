@@ -29,10 +29,13 @@ in
         ];
       };
     };
-    services.gnome.gnome-keyring.enable = true;
-    services.dunst = {
-      enable = true;
-      settings = {};
+    services = {
+      gnome.gnome-keyring.enable = true;
+      dunst = {
+        enable = true;
+        settings = { };
+      };
+      clipmenu.enable = true;
     };
 
   };
