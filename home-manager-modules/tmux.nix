@@ -7,6 +7,9 @@
   programs.tmux = {
     enable = true;
     extraConfig = ''
+      # resize pane
+      
+
       # vim-like pane switching
       bind -r ^ last-window
       bind -r k select-pane -U
